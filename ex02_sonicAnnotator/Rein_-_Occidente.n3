@@ -1,0 +1,252 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> . 
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix vamp: <http://purl.org/ontology/vamp/> .
+@prefix : <#> .
+
+:track_0 a mo:Track ;
+    dc:title """Occidente""" ;
+    foaf:maker [ a mo:MusicArtist; foaf:name """Rein""" ] ;
+    mo:available_as <file:///home/val/QMUL/examples/ex02_sonicAnnotator/Rein_-_Occidente.mp3> .
+
+<file:///home/val/QMUL/examples/ex02_sonicAnnotator/Rein_-_Occidente.mp3> a mo:AudioFile ;
+    mo:encodes :signal_0.
+
+:signal_0 a mo:Signal ;
+    mo:time [
+        a tl:Interval ;
+        tl:onTimeLine :signal_timeline_0
+    ] .
+
+:signal_timeline_0 a tl:Timeline .
+
+
+:transform_1_key a vamp:Transform ;
+    vamp:plugin <http://vamp-plugins.org/rdf/plugins/qm-vamp-plugins#qm-keydetector> ;
+    vamp:step_size "32768"^^xsd:int ; 
+    vamp:block_size "32768"^^xsd:int ; 
+    vamp:sample_rate "44100"^^xsd:float ; 
+    vamp:plugin_version """4""" ; 
+    vamp:parameter_binding [
+        vamp:parameter [ vamp:identifier "length" ] ;
+        vamp:value "10"^^xsd:float ;
+    ] ;
+    vamp:parameter_binding [
+        vamp:parameter [ vamp:identifier "tuning" ] ;
+        vamp:value "440"^^xsd:float ;
+    ] ;
+    vamp:output <http://vamp-plugins.org/rdf/plugins/qm-vamp-plugins#qm-keydetector_output_key> .
+
+:event_2 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT0.000000000S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """A minor""" ;
+    af:feature "22" .
+:event_3 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT0.743038549S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """C major""" ;
+    af:feature "1" .
+:event_4 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT1.486077098S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """C minor""" ;
+    af:feature "13" .
+:event_5 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT2.229115646S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """C major""" ;
+    af:feature "1" .
+:event_6 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT11.145578231S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """C minor""" ;
+    af:feature "13" .
+:event_7 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT11.888616780S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """Bb major""" ;
+    af:feature "11" .
+:event_8 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT13.374693878S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """D minor""" ;
+    af:feature "15" .
+:event_9 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT15.603809524S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """Bb major""" ;
+    af:feature "11" .
+:event_10 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT16.346848073S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """D minor""" ;
+    af:feature "15" .
+:event_11 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT20.062040816S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """Bb major""" ;
+    af:feature "11" .
+:event_12 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT51.269659864S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """F major""" ;
+    af:feature "6" .
+:event_13 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT57.957006803S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """D minor""" ;
+    af:feature "15" .
+:event_14 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT66.130430839S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """Bb major""" ;
+    af:feature "11" .
+:event_15 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT73.560816327S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """F major""" ;
+    af:feature "6" .
+:event_16 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT83.220317460S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """Db major""" ;
+    af:feature "2" .
+:event_17 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT86.192471655S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """F major""" ;
+    af:feature "6" .
+:event_18 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT91.393741497S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """D minor""" ;
+    af:feature "15" .
+:event_19 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT96.595011338S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """Bb major""" ;
+    af:feature "11" .
+:event_20 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT108.483628118S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """F major""" ;
+    af:feature "6" .
+:event_21 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT124.830476190S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """D minor""" ;
+    af:feature "15" .
+:event_22 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT131.517823129S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """F major""" ;
+    af:feature "6" .
+:event_23 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT161.982403628S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """D minor""" ;
+    af:feature "15" .
+:event_24 a <http://purl.org/ontology/af/KeyChange> ;
+    event:time [ 
+        a tl:Instant ;
+        tl:onTimeLine :signal_timeline_0 ;
+        tl:at "PT171.641904762S"^^xsd:duration ;
+    ] ;
+    vamp:computed_by :transform_1_key ;
+    rdfs:label """F major""" ;
+    af:feature "6" .
