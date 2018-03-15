@@ -1,0 +1,29 @@
+@prefix ns1: <http://purl.org/ontology/vamp/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://localhost:9999/blazegraph/namespace/kb/sparql#transform> a ns1:Transform ;
+    ns1:block_size _:1024 ;
+    ns1:output <http://vamp-plugins.org/rdf/plugins/vamp-example-plugins#amplitudefollower_output_amplitude> ;
+    ns1:parameter_binding [ ns1:parameter [ ns1:identifier _:attack ] ;
+            ns1:value _:0.01 ],
+        [ ns1:parameter [ ns1:identifier _:release ] ;
+            ns1:value _:0.01 ],
+        [ ns1:parameter [ ns1:identifier _:attack ] ;
+            ns1:value _:0.01 ],
+        [ ns1:parameter [ ns1:identifier _:release ] ;
+            ns1:value _:0.01 ],
+        [ ns1:parameter [ ns1:identifier _:attack ] ;
+            ns1:value _:0.01 ],
+        [ ns1:parameter [ ns1:identifier _:release ] ;
+            ns1:value _:0.01 ],
+        [ ns1:parameter [ ns1:identifier _:attack ] ;
+            ns1:value _:0.01 ],
+        [ ns1:parameter [ ns1:identifier _:release ] ;
+            ns1:value _:0.01 ] ;
+    ns1:plugin <http://vamp-plugins.org/rdf/plugins/vamp-example-plugins#amplitudefollower> ;
+    ns1:step_size _:1024 .
+
+
