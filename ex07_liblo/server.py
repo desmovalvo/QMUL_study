@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 # requirements
+import sys
 import liblo
 import logging
 
@@ -11,24 +12,24 @@ logging.debug("Logging subsystem initialized")
 
 # create server
 try:
-    server = liblo.Server(1234)
+    server = liblo.Server(8000)
 except liblo.ServerError as err:
     print(err)
     sys.exit()
 
 # create an handler
 def myCallback(path, args):
-    i, f = args
+    f1, f2 = args
     logging.debug("New request on %s" % path)
-    logging.debug("The integer argument is: %s" % i)
-    logging.debug("The flaoat argument is: %s" % f)
+    logging.debug("The float argument 2 is: %s" % f1)
+    logging.debug("The float argument 2 is: %s" % f2)
     
 # create a fallback handler
 def myFallbackCallback(path, args, types, src, data):
     logging.error("Unsupported message")
     
 # register method taking an int and a float
-server.add_method("/example", 'if', myCallback)
+server.add_method("/rate_intensity", 'ff', myCallback)
 
 # register a fallback for unhandled messages
 server.add_method(None, None, myFallbackCallback)

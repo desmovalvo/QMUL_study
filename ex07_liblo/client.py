@@ -16,9 +16,9 @@ for i in range(10):
     # send message "/foo/message1" with int, float and string arguments
     logging.debug("Sending test message %s" % i)
     try:
-        i = randint(0,100)
-        f = random()
-        liblo.send(liblo.Address(1234), "/example", i, f)
+        f1 = random()
+        f2 = random()
+        liblo.send(liblo.Address(8000), "/rate_intensity", f1, f2)
     except:
         logging.error("Error while sending message")
         
